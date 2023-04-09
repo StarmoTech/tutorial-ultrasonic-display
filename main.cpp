@@ -1,4 +1,3 @@
-
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C adresa koju smo skenirali , broj slova, broj redova
@@ -35,13 +34,8 @@ void loop() {
   //Podijeliti sa 74 ili pomnožiti 0.0135
   inches = (duration / 2) / 74;  // izbrisite ako ne zelite ince
 
-  if(cm < 100){ // ako je vrijednost manja od 100cm 
-  lcd.setCursor(14, 0); // na mjesto broj 14 (mjesto 15), red 0 (1 red) 
-  lcd.print("  "); // ispiši dva prazna mjesta
-  }
-
   lcd.setCursor(0, 0);
-  lcd.print("Udaljen. cm ");
+  lcd.print("Udaljen.cm ");
   lcd.print(cm);
   lcd.setCursor(0, 1);
   lcd.print("Udaljen. in ");
